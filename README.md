@@ -82,7 +82,7 @@ A plataforma busca proporcionar uma visão integrada do paciente durante sua pas
 | Integrante                         | GitHub                   |
 | ---------------------------------- | ------------------------ |
 | **Beatriz Leandro Augusto**        | [@beatriz-augusto](https://github.com/beatriz-augusto) |
-| **Caio Crivelaro Godinho da Mota** | [@usuario](LINK)         |
+| **Caio Crivelaro Godinho da Mota** | [@Caio18Godinho](https://github.com/Caio18Godinho)         |
 | **Gabriel Marques Ribeiro**        | [@GabrielMarRib](https://github.com/GabrielMarRib)   |
 | **João Ricardo Jortieke Junior**   | [@jortieke](https://github.com/jortieke)        |
 | **Pedro Henrique Sousa Santos**    | [@Pedro-Sousa01](https://github.com/Pedro-Sousa01)   |
