@@ -1,0 +1,795 @@
+/* =========================================================
+   AGAPE SOLUTIONS
+   KINEO — LOGIN
+   ========================================================= */
+
+
+/* =========================================================
+   PALETA
+   ========================================================= */
+
+:root {
+    --rosa: #e95f91;
+    --rosa-hover: #d94f81;
+    --rosa-claro: #f7a0c0;
+
+    --verde: #009b8f;
+    --verde-hover: #00877c;
+    --verde-claro: #5bd895;
+
+    --azul: #344d62;
+    --azul-escuro: #293f52;
+
+    --branco: #ffffff;
+    --fundo: #fafaf7;
+
+    --texto: #344d62;
+    --texto-secundario: #75838e;
+
+    --borda: #e1e5e7;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--texto);
+    background: var(--fundo);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   BARRA SUPERIOR
+   Baseada nos blocos da identidade visual
+   ========================================================= */
+
+.login-page::before {
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 7px;
+
+    z-index: 100;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e95f91 0%,
+            #f7a0c0 17%,
+            #344d62 38%,
+            #009b8f 70%,
+            #5bd895 100%
+        );
+}
+
+
+/* =========================================================
+   LOGIN — ESTRUTURA
+   ========================================================= */
+
+.login-page {
+    min-height: 100vh;
+}
+
+
+.login-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 52% 48%;
+}
+
+
+/* =========================================================
+   LADO ESQUERDO
+   ========================================================= */
+
+.login-brand {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--azul-escuro) 0%,
+            var(--azul) 45%,
+            #008f86 100%
+        );
+}
+
+
+/* =========================================================
+   CONTEÚDO DA MARCA
+   ========================================================= */
+
+.brand-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 570px;
+
+    transform: translateY(-10px);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo-area {
+    width: 350px;
+
+    margin-bottom: 55px;
+}
+
+
+.logo-area img {
+    width: 100%;
+    height: auto;
+
+    filter:
+        drop-shadow(
+            0 8px 18px rgba(0, 0, 0, 0.12)
+        );
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.brand-content h1 {
+    position: relative;
+
+    margin-bottom: 22px;
+
+    padding-left: 25px;
+
+    color: var(--branco);
+
+    font-size: clamp(40px, 4vw, 58px);
+
+    font-weight: 700;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
+}
+
+
+/*
+   Barra lateral do título
+*/
+
+.brand-content h1::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 5px;
+
+    width: 5px;
+    height: calc(100% - 10px);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--verde-claro) 0%,
+            var(--verde-claro) 50%,
+            var(--rosa-claro) 50%,
+            var(--rosa-claro) 100%
+        );
+}
+
+
+/*
+   Kineo
+*/
+
+.brand-content h1 span:first-child {
+    color: var(--verde-claro);
+}
+
+
+/*
+   cuida.
+*/
+
+.brand-content h1 span:last-child {
+    color: var(--rosa-claro);
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.brand-content > p {
+    max-width: 500px;
+
+    color:
+        rgba(255, 255, 255, 0.84);
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   DECORAÇÕES
+   ========================================================= */
+
+.brand-decoration {
+    position: absolute;
+
+    z-index: 1;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/*
+   Círculo superior direito
+*/
+
+.decoration-one {
+    width: 480px;
+    height: 480px;
+
+    right: -240px;
+    top: -220px;
+
+    background: var(--rosa);
+
+    opacity: 0.14;
+}
+
+
+/*
+   Círculo inferior esquerdo
+*/
+
+.decoration-two {
+    width: 380px;
+    height: 380px;
+
+    left: -220px;
+    bottom: -230px;
+
+    background: var(--verde-claro);
+
+    opacity: 0.12;
+}
+
+
+/* =========================================================
+   LADO DIREITO
+   ========================================================= */
+
+.login-form-area {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(91, 216, 149, 0.07),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(233, 95, 145, 0.06),
+            transparent 30%
+        ),
+        var(--fundo);
+}
+
+
+/* =========================================================
+   CARD / CONTEÚDO DO LOGIN
+   ========================================================= */
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.login-header {
+    position: relative;
+
+    margin-bottom: 40px;
+
+    padding-left: 18px;
+}
+
+
+/*
+   Barra lateral do cabeçalho
+*/
+
+.login-header::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 2px;
+
+    width: 4px;
+    height: 65px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--rosa),
+            var(--verde)
+        );
+}
+
+
+/* =========================================================
+   BEM-VINDO
+   ========================================================= */
+
+.welcome {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: var(--verde);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+   TÍTULO DO LOGIN
+   ========================================================= */
+
+.login-header h2 {
+    margin-bottom: 10px;
+
+    color: var(--azul);
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.login-header p {
+    color: var(--texto-secundario);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--azul);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.form-group input {
+    width: 100%;
+    height: 54px;
+
+    padding: 0 17px;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: var(--branco);
+
+    color: var(--texto);
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.form-group input::placeholder {
+    color: #a5afb5;
+}
+
+
+.form-group input:hover {
+    border-color: #cbd2d6;
+}
+
+
+.form-group input:focus {
+    border-color: var(--verde);
+
+    background: var(--branco);
+
+    box-shadow:
+        0 0 0 4px rgba(0, 155, 143, 0.10);
+}
+
+
+/* =========================================================
+   BOTÃO
+   ========================================================= */
+
+.btn {
+    width: 100%;
+    height: 54px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    color: var(--branco);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.btn-primary {
+    background:
+        linear-gradient(
+            100deg,
+            var(--rosa) 0%,
+            #e65b8d 55%,
+            var(--rosa-hover) 100%
+        );
+
+    box-shadow:
+        0 10px 25px rgba(233, 95, 145, 0.25);
+}
+
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--rosa-hover) 0%,
+            #c94376 100%
+        );
+
+    box-shadow:
+        0 14px 30px rgba(233, 95, 145, 0.32);
+}
+
+
+.btn-primary:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 7px 15px rgba(233, 95, 145, 0.22);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.login-footer {
+    margin-top: 42px;
+
+    text-align: center;
+}
+
+
+.login-footer p {
+    margin-bottom: 5px;
+
+    color: var(--verde);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.login-footer span {
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .login-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .login-brand {
+        min-height: 480px;
+
+        padding: 60px 50px;
+    }
+
+
+    .login-form-area {
+        min-height: auto;
+
+        padding: 70px 40px;
+    }
+
+
+    .brand-content {
+        max-width: 600px;
+
+        transform: none;
+    }
+
+
+    .brand-content h1 {
+        font-size: 46px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .login-container {
+        display: block;
+    }
+
+
+    .login-brand {
+        min-height: 390px;
+
+        padding: 45px 25px;
+
+        align-items: center;
+    }
+
+
+    .logo-area {
+        width: 240px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .brand-content h1 {
+        margin-bottom: 16px;
+
+        padding-left: 20px;
+
+        font-size: 36px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .brand-content h1::before {
+        width: 4px;
+    }
+
+
+    .brand-content > p {
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+
+    .decoration-one {
+        width: 300px;
+        height: 300px;
+
+        right: -180px;
+        top: -170px;
+    }
+
+
+    .decoration-two {
+        width: 250px;
+        height: 250px;
+
+        left: -170px;
+        bottom: -170px;
+    }
+
+
+    .login-form-area {
+        min-height: auto;
+
+        padding: 50px 25px 40px;
+    }
+
+
+    .login-header {
+        margin-bottom: 35px;
+    }
+
+
+    .login-header h2 {
+        font-size: 29px;
+    }
+
+
+    .login-footer {
+        margin-top: 32px;
+    }
+
+}
+
+
+@media (max-width: 380px) {
+
+    .login-brand {
+        min-height: 350px;
+
+        padding: 35px 20px;
+    }
+
+
+    .logo-area {
+        width: 205px;
+
+        margin-bottom: 28px;
+    }
+
+
+    .brand-content h1 {
+        font-size: 32px;
+    }
+
+
+    .brand-content > p {
+        font-size: 14px;
+    }
+
+
+    .login-form-area {
+        padding: 40px 20px 30px;
+    }
+
+
+    .login-header h2 {
+        font-size: 27px;
+    }
+
+}

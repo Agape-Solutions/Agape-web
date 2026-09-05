@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agape Solutions - Gestão</title>
+
+    <link rel="icon" type="image/x-icon" href="./assets/imgs/icon.png">
+    <link rel="stylesheet" href="css/crud.css">
+</head>
+
+<body class="dashboard-page">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <img src="assets/imgs/icon-kineo.png" alt="Agape Solutions" width="500px">
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#" class="nav-item active">
+                <span class="nav-icon"><img src="assets/svgs/dashboard.svg"></span>
+                Dashboard
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="login.html" class="logout">
+                Sair
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <main class="dashboard-content">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <span class="page-label">
+                    AGAPE SOLUTIONS
+                </span>
+
+                <h1>
+                    Gerenciamento
+                </h1>
+
+                <p>
+                    Gerencie os registros do sistema.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <section class="crud-card">
+
+            <div class="crud-header">
+
+                <div>
+
+                    <h2>
+                        Registros
+                    </h2>
+
+                    <p>
+                        Consulte e gerencie os registros cadastrados.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                >
+                    + Novo registro
+                </button>
+
+            </div>
+
+
+            <div class="crud-tools">
+
+                <div class="search-box">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="search"
+                        placeholder="Pesquisar registro..."
+                    >
+
+                </div>
+
+                <select>
+
+                    <option value="">
+                        Todos os status
+                    </option>
+
+                    <option value="ativo">
+                        Ativo
+                    </option>
+
+                    <option value="inativo">
+                        Inativo
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Setor</th>
+                            <th>Nome</th>
+                            <th>RA</th>
+                            <th>Data de Nascimento</th>
+                            <th>DI Hospitalar</th>
+                            <th>DI UCI</th>
+                            <th>HD</th>
+                            <th>Especialidade</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr class="empty-row">
+
+                            <td colspan="8">
+                                Nenhum registro encontrado.
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/crud.js"></script>
+
+</body>
+
+</html>
